@@ -1,38 +1,156 @@
-.App {
-  text-align: center;
+.coviddata {
+  padding: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.stat-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 2.5rem;
+	margin: 1.5rem auto;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* // {
+    //     "data": {
+    //         "totalSamplesTested": "5441,162",
+    //         "totalConfirmedCases": 262748,
+    //         "totalActiveCases": 3083,
+    //         "discharged": 256518,
+    //         "death": 3147,
+    //         "states": [
+    //             {
+    //                 "state": "Lagos",
+    //                 "_id": "qCL4fvXYA",
+    //                 "confirmedCases": 102877,
+    //                 "casesOnAdmission": 129,
+    //                 "discharged": 101977,
+    //                 "death": 771
+    //             }, */
+
+.stat-container > .each-stat {
+	flex: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.stat-container .each-stat {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 25px;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	border-right: 5px solid #732f10;
 }
 
-.App-link {
-  color: #61dafb;
+.stat-container .each-stat:nth-child(2) {
+	border-right-color: #6ff23a;
+}
+.stat-container .each-stat:nth-child(3) {
+	border-right-color: #f99f16;
+}
+.stat-container .each-stat:nth-child(4) {
+	border-right-color: #0f15a6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.each-stat svg {
+	width: 40px;
+	height: 40px;
+}
+
+.each-stat h3 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 29px;
+	color: #1f1f1f;
+}
+
+.each-stat h3 span, .each-stat p {
+	font-weight: 400;
+	font-size: 14px;
+	white-space: nowrap;
+	color: #bdbdbd;
+}
+
+.data-table {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	row-gap: 1.5rem;
+}
+
+.data-table h3 {
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	margin: 1rem 0px;
+	color: #000000;
+}
+
+.data-table button {
+	background-color: #f36523;
+	border-radius: 4px;
+	color: white;
+	padding: 11px 37px;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 19px;
+	border: none;
+}
+
+.data-table .table {
+	flex: 1 0 100%;
+}
+
+.data-table .table table {
+    width: 100%;
+}
+
+.data-table table thead {
+	background: #f2f2f2;
+	border-radius: 4px 4px 0px 0px;
+}
+
+th {
+	padding: 12px;
+	text-transform: capitalize;
+}
+
+td {
+	padding: 24px 12px;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	text-align: left;
+}
+
+tbody tr:not(:last-of-type) {
+	border-bottom: 1px solid #d9d9d9;
+}
+
+tr:first-child {
+	white-space: nowrap;
+}
+
+td:nth-child(n + 4), th:nth-child(n + 4) {
+	text-align: center;
+}
+
+tbody td:last-of-type {
+    cursor: pointer;
+}
+
+td.completed {
+    color: #5C993D;
+}
+
+td.cancelled {
+    color: #D93B2B;
+}
+
+@media (max-width: 1050px) {
+    .data-table .table {
+        overflow-x: scroll;
+    }
 }
