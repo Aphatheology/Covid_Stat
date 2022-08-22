@@ -1,42 +1,26 @@
 .coviddata {
-  padding: 2rem;
+  padding: 2rem 4rem;
 }
 
 
 .stat-container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
 	gap: 2.5rem;
 	margin: 1.5rem auto;
     
 }
 
-/* // {
-    //     "data": {
-    //         "totalSamplesTested": "5441,162",
-    //         "totalConfirmedCases": 262748,
-    //         "totalActiveCases": 3083,
-    //         "discharged": 256518,
-    //         "death": 3147,
-    //         "states": [
-    //             {
-    //                 "state": "Lagos",
-    //                 "_id": "qCL4fvXYA",
-    //                 "confirmedCases": 102877,
-    //                 "casesOnAdmission": 129,
-    //                 "discharged": 101977,
-    //                 "death": 771
-    //             }, */
-
-.stat-container > .each-stat {
+/* .stat-container > .each-stat {
 	flex: 1;
-}
+} */
 
 .stat-container .each-stat {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+    width: 25%;
 	padding: 25px;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
@@ -129,11 +113,15 @@ tbody tr:not(:last-of-type) {
 	border-bottom: 1px solid #d9d9d9;
 }
 
-tr:first-child {
+/* tr:first-child {
 	white-space: nowrap;
-}
+} */
 
-td:nth-child(n + 4), th:nth-child(n + 4) {
+/* td:nth-child(n + 4), th:nth-child(n + 4) {
+	text-align: center;
+} */
+
+td, th {
 	text-align: center;
 }
 
@@ -152,5 +140,14 @@ td.cancelled {
 @media (max-width: 1050px) {
     .data-table .table {
         overflow-x: scroll;
+    }
+}
+
+@media (max-width: 768px) {
+    .coviddata {
+        padding: 2rem;
+      }
+    .stat-container .each-stat {
+        width: 60%;
     }
 }
